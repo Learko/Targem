@@ -29,6 +29,7 @@ int main() {
     std::size_t n;
     std::cout << "Number of lines: ";
     std::cin >> n;
+    std::cin.ignore();
 
     std::vector<targem::ci_string> vec;
     vec.reserve(n);

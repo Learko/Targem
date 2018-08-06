@@ -252,11 +252,9 @@ std::istream& operator>>(
     auto nl = static_cast<CharT>('\n');
 
     CharT ch = nl;
-    // Skip new lines
-    for (; ch == nl; is.read(&ch, 1));
 
     // Read until new line character
-    for (; ch != nl; is.read(&ch, 1)) {
+    for (is.read(&ch, 1); ch != nl; is.read(&ch, 1)) {
         bs.append(&ch, 1);
     }
 
